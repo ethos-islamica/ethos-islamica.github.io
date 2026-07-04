@@ -21,46 +21,46 @@
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root { 
-  --background-color: #f8f6f1; /* خلفية هادئة مريحة للعين */
-  --default-color: #2f3b2f; /* لون النص الأساسي */
-  --heading-color: #0f3d2e; /* لون العناوين */
-  --accent-color: #c8a44d; /* الجولد الأساسي */
-  --surface-color: #ffffff; /* لون الكروت والعناصر */
+  --background-color: #dce7f3; /* خلفية بلون أزرق ثلجي ناعم جداً، مريح للعين ويكسر حدة الأبيض */
+  --default-color: #1a2433; /* لون النص كحلي داكن لضمان أعلى درجات الوضوح والقراءة */
+  --heading-color: #002855; /* لون العناوين أزرق داكن قوي */
+  --accent-color: #d90429; /* أحمر كرزي مميز وجذاب دون أن يكون فاقعاً */
+  --surface-color: #eef3f8; /* لون الكروت أفتح درجة بسيطة من الخلفية لعمل تباين ناعم */
   --contrast-color: #ffffff; /* لون النص فوق الخلفيات الداكنة */
 }
 
 /* Nav Menu Colors */
 :root {
-  --nav-color: rgba(255, 255, 255, 0.8);
-  --nav-hover-color: #d8b45c; /* جولد فاتح عند الهوفر */
-  --nav-mobile-background-color: #ffffff;
-  --nav-dropdown-background-color: #ffffff;
-  --nav-dropdown-color: #234232; /* أخضر غامق */
-  --nav-dropdown-hover-color: #c8a44d;
+  --nav-color: rgba(220, 231, 243, 0.9); /* خلفية القائمة العلوية زرقاء فاتحة شفافة */
+  --nav-hover-color: #ef233c; /* أحمر فاتح قليلاً عند التمرير (الهوفر) */
+  --nav-mobile-background-color: #dce7f3;
+  --nav-dropdown-background-color: #eef3f8;
+  --nav-dropdown-color: #002855;
+  --nav-dropdown-hover-color: #d90429;
 }
 
 /* Light Background */
 .light-background {
-  --background-color: #f5f8f3;
-  --surface-color: #ffffff;
+  --background-color: #c9d6e8; /* درجة أزرق أغمق قليلاً للخلفيات الفاتحة البديلة */
+  --surface-color: #dce7f3;
 }
 
 /* Dark Background */
 .dark-background {
-  --background-color: #0f241b; /* أخضر إسلامي غامق */
-  --default-color: #ffffff;
-  --heading-color: #f2d27a; /* جولد ناعم */
-  --surface-color: #183328;
+  --background-color: #0b192c; /* كحلي ليلي عميق جداً ومريح للعين */
+  --default-color: #e2e8f0; 
+  --heading-color: #ffffff; 
+  --surface-color: #122640; /* كروت بلون أزرق بحري غامق */
   --contrast-color: #ffffff;
 }
 
 /* Accent Background */
 .accent-background {
-  --background-color: #0f3d2e; /* أخضر أساسي */
-  --default-color: #ffffff;
-  --heading-color: #f2d27a;
-  --accent-color: #d8b45c;
-  --surface-color: #1d5a45;
+  --background-color: #002855; /* أزرق أساسي داكن */
+  --default-color: #e2e8f0;
+  --heading-color: #ffffff;
+  --accent-color: #ef233c; 
+  --surface-color: #003a7a; 
   --contrast-color: #ffffff;
 }
 /* Smooth scroll */
