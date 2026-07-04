@@ -154,10 +154,10 @@ h6 {
 # Global Header
 --------------------------------------------------------------*/
 .header {
-  --background-color: #0f3d2e; /* أخضر إسلامي غامق */
-  --default-color: #ffffff;
-  --heading-color: #f2d27a; /* جولد للعناوين */
-  --accent-color: #c8a44d; /* جولد أساسي */
+  --background-color: #002855; /* أزرق داكن فخم (كحلي) */
+  --default-color: #ffffff; /* النص باللون الأبيض لضمان التباين */
+  --heading-color: #ffffff; /* العناوين باللون الأبيض */
+  --accent-color: #d90429; /* أحمر كرزي لإضافة حيوية */
   
   color: var(--default-color);
   background-color: var(--background-color);
@@ -166,9 +166,9 @@ h6 {
   transition: all 0.5s;
   z-index: 997;
 
-  /* لمسة فخامة */
-  border-bottom: 1px solid rgba(242, 210, 122, 0.25);
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.12);
+  /* لمسة فخامة واحترافية */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15); /* خط أبيض شفاف وأنيق */
+  box-shadow: 0 4px 15px rgba(0, 40, 85, 0.2); /* ظل خفيف مشتق من اللون الأزرق الداكن ليتماشى مع التصميم */
 }
 
 .header .logo {
