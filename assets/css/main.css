@@ -2288,9 +2288,7 @@ section,
 }
 
 .pricing .featured .cta-btn {
-  background: var(--accent-color);
   color: var(--contrast-color);
-  border-color: var(--accent-color);
 }
 
 @media (max-width: 992px) {
