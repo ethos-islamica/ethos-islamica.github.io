@@ -8138,24 +8138,6 @@ section,
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .courses-swiper {
   padding-bottom: 50px !important;
 }
@@ -8163,7 +8145,31 @@ section,
   background-color: #21a337; /* غير اللون ده للون الأساسي بتاع موقعك */
 }
 
+.pricing-item .cta-btn {
+    font-weight: 900; 
+    font-size: 1.1rem; 
+    text-transform: uppercase; 
+    letter-spacing: 1.5px; 
+    background: linear-gradient(45deg, #447fff, #00cec9); /* نفس اللون للأربع زراير */
+    color: #ffffff !important; 
+    padding: 12px 32px; 
+    border-radius: 50px; 
+    text-decoration: none; 
+    box-shadow: 0 4px 15px rgba(2, 36, 129, 0.7); 
+    transition: all 0.3s ease-in-out; 
+    
+    /* التعديل هنا عشان الزرار يجي في النص */
+    display: block; 
+    margin: 15px auto; /* بيعمل مسافة فوق وتحت، وبيسنتر الزرار يمين وشمال */
+    width: fit-content; /* بيخلي عرض الزرار على قد الكلام اللي جواه */
+    text-align: center;
+}
 
+.pricing-item .cta-btn:hover {
+    transform: translateY(-3px); 
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.6); 
+    color: #ffffff; 
+}
 
 
 
