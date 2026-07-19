@@ -377,17 +377,16 @@ h6 {
     z-index: 9997;
   }
 
-  .navmenu ul {
+    .navmenu ul {
     display: none;
     list-style: none;
     position: absolute;
-    inset: 60px 20px 20px 20px;
-    padding: 10px 0;
+    inset: 60px 20px 20px 20px; /* المكان الأساسي بدون تغيير */
+    padding: 15px 0; /* زيادة المساحة الداخلية قليلاً لراحة العين */
     margin: 0;
-    border-radius: 6px;
-    background-color: var(--nav-mobile-background-color);
+    border-radius: 12px; /* جعل الحواف دائرية وعصرية أكثر بدلاً من 6px */
     border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
-    box-shadow: none;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1); /* إضافة ظل احترافي وناعم يعطي عمق للقائمة */
     overflow-y: auto;
     transition: 0.3s;
     z-index: 9998;
