@@ -5805,19 +5805,65 @@ section,
 }
 
 .pricing .pricing-cta .btn-primary {
-  background-color: var(--accent-color);
-  border-color: var(--accent-color);
+  /* تدرج لوني باستخدام لونك الأساسي مع درجة أفتح منه */
+  background: linear-gradient(
+    45deg, 
+    var(--accent-color), 
+    color-mix(in srgb, var(--accent-color), rgb(82, 135, 235) 100%), 
+    var(--accent-color)
+  );
+  background-size: 200% 200%; /* تكبير الخلفية لعمل حركة التدرج */
+  border: none; /* إزالة الحدود لجمالية التدرج */
   color: var(--contrast-color);
-  font-weight: 500;
-  padding: 0.75rem 1.5rem;
-  transition: all 0.3s ease;
+  font-weight: 800; /* خط أعرض قليلاً ليكون أكثر وضوحاً */
+  padding: 0.8rem 2rem;
+  border-radius: 50px; /* حواف دائرية انسيابية (Pill shape) */
+  cursor: pointer;
+  position: relative;
+  overflow: hidden; /* ضروري لإخفاء اللمعان خارج الزر */
+  z-index: 1;
+  
+  /* ظل خفيف بلون الزر نفسه (Glow effect) */
+  box-shadow: 0 4px 15px color-mix(in srgb, var(--accent-color), transparent 60%);
+  
+  /* انتقال سلس لجميع الحركات */
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
+/* الحركات والتأثيرات عند مرور الماوس (Hover) */
 .pricing .pricing-cta .btn-primary:hover {
-  background-color: color-mix(in srgb, var(--accent-color), transparent 15%);
-  border-color: color-mix(in srgb, var(--accent-color), transparent 15%);
+  background-position: 100% 0; /* تحريك التدرج اللوني */
+  transform: translateY(-4px); /* رفع الزر للأعلى قليلاً */
+  
+  /* زيادة توهج الظل */
+  box-shadow: 0 12px 25px color-mix(in srgb, var(--accent-color), transparent 40%);
 }
 
+/* تأثير عند الضغط على الزر (Active) */
+.pricing .pricing-cta .btn-primary:active {
+  transform: translateY(1px); /* نزول الزر للأسفل ليبدو وكأنه نُقر فعلياً */
+  box-shadow: 0 2px 10px color-mix(in srgb, var(--accent-color), transparent 70%);
+}
+
+/* إضافة تأثير اللمعان (Shine Effect) الذي يمر عبر الزر */
+.pricing .pricing-cta .btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%; /* يبدأ من خارج الزر يساراً */
+  width: 50%;
+  height: 100%;
+  /* خط أبيض شبه شفاف يمثل اللمعة */
+  background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%);
+  transform: skewX(-25deg); /* إمالة خط اللمعان */
+  transition: all 0.6s ease;
+  z-index: -1; /* ليكون تحت النص ولكن فوق الخلفية */
+}
+
+/* تحريك اللمعان عند مرور الماوس */
+.pricing .pricing-cta .btn-primary:hover::before {
+  left: 150%; /* يتحرك إلى خارج الزر يميناً */
+}
 .pricing .pricing-features {
   flex-grow: 1;
 }
