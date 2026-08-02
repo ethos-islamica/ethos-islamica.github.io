@@ -8119,10 +8119,10 @@ section,
 
 
 
+
 .sitename {
-  font-family: 'Cormorant Garamond', serif;
   font-size: 25px;
-  font-weight: 600;
+  font-weight: 800;
   letter-spacing: 1px;
   color: #f2d27a;
   
@@ -8131,6 +8131,49 @@ section,
   text-shadow: 0 2px 10px rgba(242, 210, 122, 0.15);
 
   margin: 0;
+}
+
+/* ========================================= */
+/* تعديلات الناف بار للموبايل والشاشات الكبيرة */
+/* ========================================= */
+
+/* 3. ترتيب العناصر في الشاشات الصغيرة */
+@media (max-width: 1200px) {
+  .header .logo {
+    order: 1;
+  }
+  .header .header-actions {
+    order: 2;
+    margin: 0 15px 0 0;
+  }
+  .header .navmenu {
+    order: 3;
+  }
+}
+
+/* 4. تحسين شكل قائمة الموبايل لتكون بيضاء والنص كحلي */
+@media (max-width: 1199px) {
+  .navmenu ul {
+    inset: 70px 15px 20px 15px;
+    padding: 20px 0; 
+    border-radius: 15px; 
+    box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.2); 
+  }
+  
+  .navmenu a,
+  .navmenu a:focus {
+    color: #002855; 
+    font-weight: 600;
+  }
+}
+
+/* ========================================= */
+/* 5. إجبار اسم الموقع (اللوجو) إنه يكون عريض في كل الصفحات */
+/* ========================================= */
+.header .logo .sitename {
+  font-weight: 800 !important; 
+  /* لو لسه حاسس إنه محتاج يكون أتخن، امسح علامات الكومنت من السطر اللي تحت */
+  /* -webkit-text-stroke: 0.8px currentColor !important; */
 }
 
 
