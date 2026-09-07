@@ -284,7 +284,7 @@ h6 {
     height: 2px;
     bottom: -6px;
     left: 0;
-    background-color: var(--nav-hover-color);
+    background-color: #caee46;
     visibility: hidden;
     width: 0px;
     transition: all 0.3s ease-in-out 0s;
@@ -300,7 +300,7 @@ h6 {
   .navmenu li:hover>a,
   .navmenu .active,
   .navmenu .active:focus {
-    color: var(--nav-hover-color);
+    color: #ddee46;
   }
 
   .navmenu .dropdown ul {
@@ -8284,7 +8284,7 @@ section,
 /* تأثير تغيير اللون ورفع الكلمة قليلاً عند التمرير */
 .navmenu a:hover,
 .navmenu a.active {
-  color: #ee4646; /* لون أحمر متناسق مع زر Start Learning */
+  color: #ddee46; /* لون أحمر متناسق مع زر Start Learning */
   transform: translateY(-2px); /* الكلمة ترتفع للأعلى مسافة بسيطة جداً */
 }
 
@@ -8296,7 +8296,7 @@ section,
   left: 0;
   width: 100%;
   height: 2.5px; /* سُمك الخط السفلي */
-  background: linear-gradient(45deg, #811f18, #ee4646); /* نفس التدرج اللوني الفخم */
+  background: linear-gradient(45deg, #817518, #caee46); /* نفس التدرج اللوني الفخم */
   border-radius: 5px;
   
   /* إخفاء الخط في البداية */
