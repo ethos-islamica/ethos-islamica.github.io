@@ -8103,21 +8103,6 @@ section,
   }
 }
 
-/*--------------------------------------------------------------
-# Starter Section Section
---------------------------------------------------------------*/
-.starter-section {
-  /* Add your styles here */
-}
-
-
-
-
-
-
-
-
-
 
 
 .sitename {
@@ -8450,7 +8435,7 @@ a.btn-getstarted:hover::before {
   left: 100% !important;
 }
 
-/* =========================================================
+* =========================================================
    Mobile Sidebar Menu Styling (Cairo Arabic Center Style)
    ========================================================= */
 @media (max-width: 1199px) {
@@ -8459,9 +8444,17 @@ a.btn-getstarted:hover::before {
   .mobile-nav-active .navmenu {
     position: fixed;
     inset: 0;
-    background: rgba(5, 12, 20, 0.75) !important;
+    background: rgba(10, 8, 20, 0.7) !important;
     backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
     z-index: 9998;
+    opacity: 0;
+    animation: navOverlayFade 0.35s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    will-change: opacity;
+  }
+
+  @keyframes navOverlayFade {
+    to { opacity: 1; }
   }
 
   /* 2. حاوية القائمة الرئيسية (Drawer Container) */
@@ -8476,7 +8469,7 @@ a.btn-getstarted:hover::before {
     width: 320px !important;
     max-width: 85vw !important;
     height: 100vh !important;
-    background: #0d1d2d !important; /* اللون الأزرق الكحلي الداكن */
+    background: #10131f !important; /* كحلي داكن مائل للأسود */
     padding: 80px 20px 30px 20px !important;
     margin: 0 !important;
     border-radius: 0 !important;
@@ -8485,11 +8478,27 @@ a.btn-getstarted:hover::before {
     box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5) !important;
     overflow-y: auto;
     z-index: 9999;
-    direction: ltr; /* لضبط الاتجاه مثل التصميم المراد */
+    direction: ltr;
     text-align: left;
+
+    /* حركة الانزلاق الناعمة بدل الظهور المفاجئ */
+    transform: translateX(100%);
+    animation: navDrawerSlide 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    will-change: transform;
+    backface-visibility: hidden;
   }
 
-  /* 3. تعديل زر الإغلاق (Close Icon X) */
+  @keyframes navDrawerSlide {
+    to { transform: translateX(0); }
+  }
+
+  /* تحسين التمرير على الموبايل بدون تقطيع */
+  .mobile-nav-active .navmenu > ul {
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+  }
+
+  /* 3. زر الإغلاق (Close Icon X) */
   .mobile-nav-active .mobile-nav-toggle {
     position: fixed !important;
     top: 20px !important;
@@ -8497,30 +8506,33 @@ a.btn-getstarted:hover::before {
     z-index: 10000 !important;
     width: 42px;
     height: 42px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(239, 68, 68, 0.08); /* أحمر خفيف */
+    border: 1px solid rgba(239, 68, 68, 0.25);
     border-radius: 10px;
     display: flex !important;
     align-items: center;
     justify-content: center;
-    color: #a0aec0 !important;
+    color: #f87171 !important; /* أحمر فاتح */
     font-size: 22px !important;
-    transition: all 0.3s ease;
+    transition: background 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+                color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .mobile-nav-active .mobile-nav-toggle:hover {
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(239, 68, 68, 0.2);
     color: #ffffff !important;
+    transform: rotate(90deg);
   }
 
   /* 4. إخفاء أيقونات الأسهم القديمة إذا وجدت */
-  .navmenu a i, 
+  .navmenu a i,
   .navmenu a:focus i {
     display: none !important;
   }
 
   /* 5. روابط القائمة العامة (General Links) */
-  .navmenu a, 
+  .navmenu a,
   .navmenu a:focus {
     color: #94a3b8 !important;
     font-size: 15px !important;
@@ -8531,38 +8543,50 @@ a.btn-getstarted:hover::before {
     align-items: center;
     justify-content: flex-start !important;
     gap: 12px;
-    transition: all 0.2s ease !important;
+    transition: background 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+                color 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     background: transparent;
   }
 
-  /* عند التمرير على الرابط (Hover) */
+  /* عند التمرير على الرابط (Hover) — لمسة زرقاء */
   .navmenu a:hover {
     color: #ffffff !important;
-    background: rgba(255, 255, 255, 0.04) !important;
+    background: rgba(59, 130, 246, 0.1) !important; /* أزرق خفيف */
+    transform: translateX(-4px);
   }
 
-  /* 6. العنصر النشط المظلل (Active Card like 'Главная') */
+  /* 6. العنصر النشط المظلل — أصفر بارز */
   .navmenu a.active {
-    background: #172a3d !important;
-    color: #38bdf8 !important; /* اللون الأزرق الساطع للنص */
+    background: rgba(59, 130, 246, 0.12) !important; /* خلفية زرقاء خفيفة */
+    color: #facc15 !important; /* نص أصفر ذهبي */
     font-weight: 700 !important;
-    border: 1px solid rgba(56, 189, 248, 0.2);
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(250, 204, 21, 0.35);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
   }
 
-  /* 7. العناوين الجانبية للفئات (Categories/Headers) */
+  /* 7. العناوين الجانبية للفئات (Categories/Headers) — أزرق */
   .navmenu ul li.nav-header {
     font-size: 11px !important;
     font-weight: 800 !important;
     text-transform: uppercase;
     letter-spacing: 1.2px;
-    color: #64748b !important;
+    color: #60a5fa !important; /* أزرق فاتح */
     margin: 20px 0 8px 16px !important;
     list-style: none;
   }
 
-  /* إضافة تأثير الخط السفلي التجميلي للـ Underline المخفي القديم */
+  /* خط تحتي تجميلي أحمر عند التفعيل بدل القديم */
   .navmenu a::after {
     display: none !important;
+  }
+
+  .navmenu a.active::before {
+    content: "";
+    width: 4px;
+    height: 60%;
+    background: #ef4444; /* أحمر */
+    border-radius: 4px;
+    margin-left: -8px;
   }
 }
